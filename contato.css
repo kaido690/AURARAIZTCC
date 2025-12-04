@@ -1,0 +1,43 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header {
+  background: #ffe8f1;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #d14b7b;
+  font-size: 28px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+} /*lista das letras*/
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: 0.3s;/* fonte das letras */
+}
+
+
+
+  footer {
+    background: #ffe8f1;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}

@@ -1,4 +1,4 @@
-
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +6,8 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Header */
-header {
+/* HEADER */
+.header {
     background: #ffe8f1;
     padding: 20px;
     display: flex;
@@ -15,243 +15,156 @@ header {
     align-items: center;
 }
 
-header h1 {
+.logo {
     color: #d14b7b;
     font-size: 28px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-} /*lista das letras*/
-
-nav a {
+.menu a {
+    margin-left: 20px;
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    transition: 0.3s;/* fonte das letras */
+    transition: 0.3s;
 }
 
+.menu a:hover {
+    color: #d14b7b;
+}
 
+/* GRID GERAL */
 .product-grid {
+    max-width: 1300px;
+    margin: 40px auto;
     display: grid;
+    gap: 20px;
 
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 15px;
-    max-width: 1400px; 
-    margin: 0 auto;
+    /* GRID RESPONSIVO */
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
-
+/* CARD PRINCIPAL */
 .main-offer {
-    grid-column: span 1;  /* logo da promoção  */
     background-color: #7C9449;
-    color: white;
     position: relative;
+    border-radius: 10px;
     overflow: hidden;
-    padding: 2px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 40px; 
-}
-
-.offer-content {
-   color: #000000;
-    z-index: 2;
-
-}
-
-.main-offer h1 {
-    font-size: 3em;
-    line-height: 1;
-    margin-bottom: 10px;
-}
-
-.main-offer p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
-.confirm-button {
-    background: none;
-    border: none;
-    color: rgb(255, 0, 0);
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0;
-    text-decoration: underline;
-    font-size: 1em;
-    align-self: flex-start;
-}
-
-.main-offer-images {
-    position: absolute;
-    bottom: 240;
-    right: 0;
-    height: 80%;
-    width: 100%;
-    z-index: 1; 
- 
+    min-height: 280px;
 }
 
 .main-offer-images img {
-    height: 80%;
-    position: absolute;
-    bottom: 0;
+    width: 100%;
+    height: auto;
     object-fit: contain;
 }
 
-.main-offer-images .liz-bottle {
-    left: -10%; 
-    bottom: -10px;
-}
-
-.main-offer-images .celebre-bottle {
-    right: -10%;
-    bottom: -10px;
-}
-
-
-
+/* CARDS PEQUENOS */
 .small-card {
-    grid-column: span 1; 
-    background-color: white;
+    background: white;
     border: 1px solid #eee;
-    padding: 15px 0 0 0; 
+    border-radius: 12px;
+    overflow: hidden;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding-bottom: 45px;
+    transition: transform .2s;
 }
 
+.small-card:hover {
+    transform: scale(1.03);
+}
+
+/* DESCONTO */
 .discount-badge {
     position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #5cb85c; 
+    top: 8px;
+    left: 8px;
+    background: #5cb85c;
+    padding: 6px 10px;
     color: white;
-    padding: 5px 8px;
-    font-size: 0.8em;
+    font-size: .85em;
     font-weight: bold;
-    z-index: 10;
+    border-radius: 5px;
 }
 
-.favorite-icon {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    color: #999;
-    font-size: 1.5em;
-    cursor: pointer;
-    z-index: 10;
-}
-
+/* IMAGEM DO PRODUTO */
 .product-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-.product-info {
-    padding: 0 15px 15px 15px;
     width: 100%;
-    box-sizing: border-box;
+    height: 180px;
+    object-fit: contain;
+    padding: 10px;
 }
 
-.promo-tag {
-    display: inline-block;
-    background-color: #5cb85c;
-    color: white;
-    padding: 2px 5px;
-    font-size: 0.75em;
-    font-weight: bold;
-    margin-bottom: 5px;
+/* INFO PRODUTO */
+.product-info {
+    padding: 10px;
+    text-align: center;
 }
 
 .product-name {
     font-weight: 900;
-    font-size: 1.1em;
-    margin: 5px 0 0 0;
+    font-size: 1.2em;
+    margin-top: 5px;
 }
 
 .product-description {
-    font-size: 0.9em;
+    font-size: .9em;
     color: #555;
-    min-height: 40px; 
+    min-height: 40px;
 }
 
-.rating {
-    color: rgb(132, 124, 165);
-    font-size: 0.8em;
-    margin: 5px 0;
-}
-
-.original-price { /*preço antigo*/
+.original-price {
     text-decoration: line-through;
     color: #963d3d;
-    font-size: 0.9em;
-    margin-bottom: 0;
+    margin-top: 5px;
 }
 
 .current-price {
-    color: #000;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: bold;
-    margin: 0;
 }
 
-.installment-info {
-    font-size: 0.8em;
-    color: #555;
-    margin-top: 2px;
-}
-
-
-.add-to-cart-button {  /*cor do icone do carinho*/
-    background-color: #a4d1d1; 
+/* BOTÃO CARRINHO */
+.add-to-cart-button {
+    background-color: #a4d1d1;
     color: white;
     border: none;
-    padding: 10px;
     font-size: 1.2em;
     cursor: pointer;
-    position: absolute; 
-    bottom: 0;
-    right: 0;
+
     width: 45px;
     height: 45px;
+    border-radius: 8px;
+
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    transition: .2s;
 }
 
-.fotomeio {
-    background-color: #B5C56D
-    ;
-    color: #0b48f0; 
-   padding: 20px; 
-    margin: 0px; 
-    text-align: center 
+.add-to-cart-button:hover {
+    background-color: #8bb8b8;
 }
 
-.fotoultima {
-    background-color: #B5C56D
-    ;
-    color: #0b48f0; 
-   padding: 20px; 
-    margin: 0px; 
-    text-align: center }
+/* SEÇÕES INTERMEDIÁRIAS */
+.section-divider {
+    width: 100%;
+    height: 50px;
+    background: #B5C56D;
+    margin: 40px 0;
+}
 
-    footer {
-        background: #ffe8f1;
-        text-align: center;
-        padding: 15px;
-        margin-top: 40px;
-    }
+/* FOOTER */
+.footer {
+    background: #ffe8f1;
+    padding: 20px;
+    text-align: center;
+}
 
+.footer ul {
+    list-style: none;
+}
 
- 
-
-
-  
-
+.footer ul li {
+    margin: 8px 0;
+}
